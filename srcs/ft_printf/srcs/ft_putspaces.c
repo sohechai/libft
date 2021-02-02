@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putspaces.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:35:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:25:02 by sofiahechai      ###   ########lyon.fr   */
+/*   Created: 2019/12/11 16:32:13 by sohechai          #+#    #+#             */
+/*   Updated: 2021/02/02 11:17:05 by sofiahechai      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../../includes/libft.h"
 
-int			ft_strlen(const char *s)
+void	putzeros(t_printf *st)
 {
-	size_t i;
+	while (st->i--)
+		ft_putchar('0', st);
+}
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+void	ft_putspaces(t_printf *st)
+{
+	while (st->length_field--)
+		ft_putchar(' ', st);
 }

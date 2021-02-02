@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_dot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:35:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:25:02 by sofiahechai      ###   ########lyon.fr   */
+/*   Created: 2019/12/02 16:08:40 by sohechai          #+#    #+#             */
+/*   Updated: 2021/02/02 11:15:53 by sofiahechai      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../../includes/libft.h"
 
-int			ft_strlen(const char *s)
+void	ft_dot(const char *fmt, t_printf *st, va_list ap)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i] != '\0')
+	if (fmt[st->j] == '.' && fmt[st->j - 1] != '*')
 	{
-		i++;
+		st->j++;
+		st->length_field = 0;
+		if (ft_isnb(fmt, st) == 1)
+			st->length_dot = ft_atoiwithst(fmt, st);
+		else
+			st->length_dot = 0;
+		if (fmt[st->j] == '*')
+		{
+			st->length_dot = va_arg(ap, int);
+			st->j++;
+		}
+		ft_putdot(st, fmt, ap);
 	}
-	return (i);
 }

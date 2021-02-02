@@ -6,17 +6,17 @@
 /*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 14:16:25 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:21:13 by sofiahechai      ###   ########lyon.fr   */
+/*   Updated: 2021/02/02 11:21:50 by sofiahechai      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../../includes/libft.h"
 
 static char	*ft_strwrite(char const *s1, char const *s2, char *dest)
 {
-	size_t i;
-	size_t j;
-	size_t k;
+	int	i;
+	int j;
+	int k;
 
 	i = 0;
 	j = 0;
@@ -26,7 +26,7 @@ static char	*ft_strwrite(char const *s1, char const *s2, char *dest)
 		dest[k] = s1[i++];
 		k++;
 	}
-	if (i == (size_t)(s1))
+	if (i == (int)ft_strlen(s1))
 	{
 		while (s2[j])
 		{

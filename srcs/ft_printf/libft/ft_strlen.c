@@ -6,20 +6,18 @@
 /*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:35:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:25:02 by sofiahechai      ###   ########lyon.fr   */
+/*   Updated: 2021/02/02 11:17:47 by sofiahechai      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../../includes/libft.h"
 
-int			ft_strlen(const char *s)
+unsigned long		ft_strlenp(const char *s)
 {
-	size_t i;
+	int i;
 
 	i = 0;
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }

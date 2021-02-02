@@ -6,7 +6,7 @@
 /*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:03:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:01:02 by sofiahechai      ###   ########lyon.fr   */
+/*   Updated: 2021/02/02 11:25:44 by sofiahechai      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	char	*dest;
 
 	start = ft_checkstart(s1, set);
-	if (start == ft_strlen(s1))
+	if (start == (size_t)ft_strlen(s1))
 		return (ft_strdup(""));
 	end = ft_checkend(s1, set);
 	len = ft_strlen(s1) - end;

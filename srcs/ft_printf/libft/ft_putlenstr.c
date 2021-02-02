@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putlenstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:35:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:25:02 by sofiahechai      ###   ########lyon.fr   */
+/*   Created: 2019/11/29 14:49:11 by sohechai          #+#    #+#             */
+/*   Updated: 2021/02/02 11:15:53 by sofiahechai      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../../../includes/libft.h"
 
-int			ft_strlen(const char *s)
+char	*ft_putlenstr(char *str, int len, t_printf *st)
 {
-	size_t i;
+	int i;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	while (str[i] && i < len)
+		ft_putchar(str[i++], st);
+	return (str);
 }
