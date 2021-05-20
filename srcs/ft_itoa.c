@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
+/*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 18:14:07 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:01:02 by sofiahechai      ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 16:40:05 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_sizenumber(int n)
 {
-	int		cmpt;
-	int		result;
+	int	cmpt;
+	int	result;
 
 	cmpt = 0;
 	result = n;
@@ -34,17 +34,16 @@ static int	ft_sizenumber(int n)
 	return (cmpt);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int			cmpt;
-	char		*nb_str;
+	int		cmpt;
+	char	*nb_str;
 
 	cmpt = ft_sizenumber(n);
-	if (!(nb_str = malloc(sizeof(char) * ft_sizenumber(n) + 1)))
+	nb_str = malloc(sizeof(char) * ft_sizenumber(n) + 1);
+	if (!(nb_str))
 		return (NULL);
 	nb_str[cmpt--] = '\0';
-	// if (n == -2147483648)
-	// 	return (ft_strdup("-2147483648"));
 	if (n == 0)
 	{
 		nb_str[0] = '0';

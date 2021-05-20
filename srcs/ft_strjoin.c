@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
+/*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 14:16:25 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:21:13 by sofiahechai      ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 16:51:15 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static char	*ft_strwrite(char const *s1, char const *s2, char *dest)
 {
-	size_t i;
-	size_t j;
-	size_t k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 0;
 	j = 0;
@@ -38,13 +38,14 @@ static char	*ft_strwrite(char const *s1, char const *s2, char *dest)
 	return (dest);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*dest;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(dest = malloc(sizeof(char) * len + 1)))
+	dest = malloc(sizeof(char) * len + 1);
+	if (!(dest))
 		return (NULL);
 	dest = ft_strwrite(s1, s2, dest);
 	return (dest);

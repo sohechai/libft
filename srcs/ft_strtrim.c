@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiahechaichi <sofiahechaichi@student.    +#+  +:+       +#+        */
+/*   By: sohechai <sohechai@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:03:27 by sohechai          #+#    #+#             */
-/*   Updated: 2021/02/02 11:25:44 by sofiahechai      ###   ########lyon.fr   */
+/*   Updated: 2021/05/20 16:53:18 by sohechai         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static char		*ft_cpy(char *dest, char const *s1, size_t start, size_t len)
+static char	*ft_cpy(char *dest, char const *s1, size_t start, size_t len)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ static char		*ft_cpy(char *dest, char const *s1, size_t start, size_t len)
 	return (dest);
 }
 
-static int		ft_checkstart(char const *s1, char const *set)
+static int	ft_checkstart(char const *s1, char const *set)
 {
 	size_t	count_start;
 	size_t	i;
@@ -46,7 +46,7 @@ static int		ft_checkstart(char const *s1, char const *set)
 	return (count_start);
 }
 
-static int		ft_checkend(char const *s1, char const *set)
+static int	ft_checkend(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	i;
@@ -68,7 +68,7 @@ static int		ft_checkend(char const *s1, char const *set)
 	return (count_end);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
@@ -80,7 +80,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	end = ft_checkend(s1, set);
 	len = ft_strlen(s1) - end;
-	if (!(dest = malloc(sizeof(char) * (ft_strlen(s1) - start - end) + 1)))
+	dest = malloc(sizeof(char) * (ft_strlen(s1) - start - end) + 1);
+	if (!(dest))
 		return (NULL);
 	ft_cpy(dest, s1, start, len);
 	return (dest);
