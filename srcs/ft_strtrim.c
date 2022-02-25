@@ -85,5 +85,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_cpy(dest, s1, start, len);
 	return (dest);
-	return (0);
 }
